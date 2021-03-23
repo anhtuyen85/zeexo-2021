@@ -1,0 +1,26 @@
+/* Header */
+.topbar-switcher {
+    .select-dropdown-element-ui {
+        > a {
+            @extend %display-flex;
+            @extend %align-items-center;
+        }
+    }
+}
+.header-icons {
+    .btn {
+        padding: 0;
+        @extend %position-relative;
+        .number {
+            @include ab(-15px, n, n, -10px);
+            @extend %fw-600;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;            
+        }
+        &:not(:last-child) {
+            @include margin-end(23px);
+        }
+    }
+}
+/* End Header */

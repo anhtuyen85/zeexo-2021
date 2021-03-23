@@ -1,0 +1,8 @@
+/* Animation */ 
+@for $index from 0 through 20 {
+  .animation-fade-index-#{$index} { 
+    animation: animation-bottom-top 0.6s both;   
+    animation-delay: 0.1s * $index;
+  }    
+}
+/* End Animation */ 
