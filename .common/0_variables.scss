@@ -2,12 +2,12 @@
 :root {    
     --body-base-size: 62.5%;      
     
-    --heading-size-h1: 4.4rem;
-    --heading-size-h2: 4.0rem;
-    --heading-size-h3: 3.6rem;
-    --heading-size-h4: 3.0rem;
-    --heading-size-h5: 2.6rem;
-    --heading-size-h6: 2.1rem;
+    --heading-size-h1: 3.0rem;
+    --heading-size-h2: 2.8rem;
+    --heading-size-h3: 2.4rem;
+    --heading-size-h4: 2.0rem;
+    --heading-size-h5: 1.8rem;
+    --heading-size-h6: 1.4rem;
     --heading-1-weight: 600;
     --heading-2-weight: 600;
     --heading-3-weight: 600;
@@ -20,18 +20,11 @@
     --topbar-border: 16, 49, 120;
 
     --header-bg-desk: #ffffff;
-    --header-text-color-desk: #5b6c8f;
-    --header-icons-color-desk: #ff9923;
-    --header-bg-cart-number-desk: #103178;
-    --header-text-cart-number-desk: #ffffff;    
-    --header-border-color-desk: 16, 49, 120;    
-
-    --header-bg-mobile: #ffffff;
-    --header-text-color-mobile: #5b6c8f;
-    --header-icons-color-mobile: #ff9923;
-    --header-bg-cart-number-mobile: #103178;
-    --header-text-cart-number-mobile: #ffffff;    
-    --header-border-color-mobile: 16, 49, 120;        
+    --header-text-color: #5b6c8f;
+    --header-icons-color: #ff9923;
+    --header-bg-number: #103178;
+    --header-text-number: #ffffff;        
+       
   
     --nav-size: 1.7rem; 
     --nav-weight: 600;

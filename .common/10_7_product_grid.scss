@@ -1,0 +1,10 @@
+.home-products-grid {    
+    .row {
+        margin-left: var(--gutter-xxs);
+        margin-right: var(--gutter-xxs);
+        > * {
+            padding-left: var(--gutter-xxs);
+            padding-right: var(--gutter-xxs);
+        }
+    }    
+}

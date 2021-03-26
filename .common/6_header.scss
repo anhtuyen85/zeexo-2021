@@ -1,26 +1,152 @@
 /* Header */
-.topbar-switcher {
+.select-dropdown-group-ui {
     .select-dropdown-element-ui {
         > a {
             @extend %display-flex;
             @extend %align-items-center;
+            line-height: 24px;
+            padding: var(--gutter-xxs) 0;
+            svg path {
+                color: var(--body-link);
+            }
+            &:hover {
+                svg path {
+                    fill: var(--body-link-hover);
+                }
+            }
         }
     }
 }
 .header-icons {
-    .btn {
-        padding: 0;
-        @extend %position-relative;
-        .number {
-            @include ab(-15px, n, n, -10px);
-            @extend %fw-600;
-            width: 20px;
-            height: 20px;
-            line-height: 20px;            
+    @include padding-start(16px);
+    @extend %display-flex;
+    @extend %align-items-center;
+    > a {
+        > .svg-element-ui {
+            margin: 0;
         }
-        &:not(:last-child) {
-            @include margin-end(23px);
+    }    
+    .btn {
+        padding: 0;        
+        line-height: var(--gutter-lg);
+        @extend %position-relative;                      
+    }
+    .search-ui-btn {
+        svg path {
+            stroke: var(--body-color);
+        }
+    }
+    .topbar-switcher {
+        @include margin-end(22px);
+        .select-dropdown-element-ui {
+            @include margin-end(var(--gutter-md));
         }
     }
 }
+.header-search {
+    @include padding-end(23px);
+    .form-search-ui {
+        @extend %position-relative;
+        form {
+            @extend %display-flex;
+            @extend %align-items-center;
+            @include margin-start(auto);
+            max-width: 515px;
+            width: 100%;
+            background: #f0f0f0;
+            border-radius: var(--border-radius-default);  
+            input {
+                width: 100%;
+                height: 38px;
+                background: none;
+            }
+            button {
+                padding: 0 10px;                
+                height: 38px;
+                @extend %display-flex;
+                @extend %align-items-center;
+                @extend %justify-content-center;
+                svg path {
+                    stroke: var(--body-color);
+                }
+                .svg-element-ui {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+.form-search--result-list {
+    @include ab(100%, 0, n, n);
+    min-width: 100%;
+}
+.header-row-1 {
+    display: block;
+    padding: var(--gutter-md) 0;
+    .row {        
+        @extend %align-items-center;
+        > div {
+            padding: 0 var(--gutter-xs);
+        }        
+    }
+}
+.header-row-2 {    
+    .secondary-menu-wrapper {
+        @include margin-start(auto);
+    }
+}
+.horizontal-menu {
+    > .main-menu {
+        > li {       
+            @extend %position-relative;
+            > a {
+                display: block;
+                line-height: 25px;
+                padding: 5px 0;
+            }
+        }
+    }
+}
+.section-header-1,
+.section-header-2 {
+    .header-row-1 {
+        .row {
+            > .nav-mobile {
+                @include padding-end(5px);
+                @include padding-start(35px);
+                @include margin-end(auto);
+            }            
+        }        
+    } 
+    .nav-mobile .nav--mobile {
+        border: 1px solid var(--body-border-color);
+        border-radius: var(--border-radius-default);
+        padding: 7px var(--gutter-md);
+    }  
+    .header-col-3 {
+        @include margin-start(auto);
+    }
+}
+.section-header-1 {         
+    .header-row-2 {        
+        > * {
+            &:not(:last-child) {
+                @include padding-end(var(--gutter-xlg));
+            }
+        }
+        .topbar-text {
+            @include margin-start(auto);
+        }
+    }
+    .header-custom-text-info {
+        a {
+            color: var(--main-color);
+        }
+    }     
+    .header-search {
+        flex: 1;
+    }
+}
+
+
 /* End Header */

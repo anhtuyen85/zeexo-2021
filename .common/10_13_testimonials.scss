@@ -1,0 +1,20 @@
+.home-testimonials {
+    .card_section-item-inner {
+        padding: var(--gutter-sm);
+        @media (min-width: 576px) {
+            padding: var(--gutter-lg);
+        }
+        p {
+            margin: 0 0 7px;
+            @media (min-width: 576px) {
+                margin-bottom: var(--gutter-xs);
+            }
+        }
+        .card_testimonial-review {
+            font-size: calc(var(--body-font-size) + 0.2rem);
+            p {
+                color: var(--section-heading-cl);
+            }
+        }
+    }
+}

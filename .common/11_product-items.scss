@@ -1,0 +1,113 @@
+
+.featured_product__item, 
+.empty_card {
+    .overlay-ui {
+        top: auto;
+        @include ab(n, 0, 0, n);
+        @extend %display-flex;
+        @extend %flex-wrap;
+        @extend %align-items-center;
+        > * {
+            &:not(:last-child) {
+                @include margin-end(5px);
+            }
+        }
+        .svg-element-ui {
+            margin: 0;
+            + span {
+                display: none;
+            }
+        }
+        .btn, a {
+            padding: 0;
+            width: 32px;
+            height: 32px;
+            border: 1px solid var(--body-border-color);
+            border-radius: var(--border-radius-default);    
+            @extend %display-flex;
+            @extend %justify-content-center;
+            @extend %align-items-center;               
+            svg {
+                width: 14px;
+                path {
+                    stroke: var(--main-color);
+                }
+            }
+            @media (min-width: 1025px) {
+                &:hover {
+                    border-color: var(--main-color);
+                }
+            }
+        }
+    }
+    p {
+        margin: 0;
+    }
+    .featured-product_wrapper {
+        .featured-product_header {
+            @extend %position-relative;
+            margin-bottom: var(--gutter-xs);
+        }
+        .featured_product__item-info {
+            .featured_product__item-name {
+                font-size: var(--product-item-name);
+            }
+            .product-price {
+                font-size: vaf(--product-item-price);
+            }
+            .price-compare {
+                font-size: var(--product-price-compare);
+            }
+        }
+    }
+    .swatch-variants-wrapper { 
+		.swatch-option {
+			margin: var(--gutter-xxs) 5px 0; 
+			&:first-child {
+				margin-top: var(--gutter-xs); 
+			}
+			.swatch-container .swatch-item {
+				.swt-color {
+					width: 15px;
+					height: 15px;
+					&:after {
+						content: none;
+					}
+					&.active { 
+                        &:before  {
+                            opacity: 1;
+                        }
+                        &.customColor-white {
+                            border-color: transparent;
+                        } 
+                    }
+				}
+				.swt-button {
+					@extend %size-swatch; 
+					padding: 2px 10px;
+					font-size: calc(var(--body-font-size) - 0.4rem);
+					&.active {
+						@extend %size-swatch-active; 
+					}
+				} 
+				.swt-image {
+                    border-radius: var(--border-radius-default);
+					background-position: center;
+                    border: 1px solid var(--body-border-color);                    
+                    background-size: cover;
+                    width: 30px;
+                    height: 30px;
+					display: block;
+					&.active {
+						border-color: var(--main-color);
+					}
+					&:hover {
+						@media (min-width: 1025px) {
+							border-color: var(--main-color);
+						}
+					}
+				}
+			}
+		}
+	}
+}

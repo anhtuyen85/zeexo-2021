@@ -1,0 +1,14 @@
+.home-custom-content {
+    .sub__text-wrapper,
+    .sub__text {
+        @extend %display-flex;        
+        @extend %align-items-center;
+    }
+    .sub__text-wrapper {
+        @extend %flex-wrap;
+        .svg-element-ui {
+            margin: 0;
+            @include margin-end(12px);
+        }
+    }
+}

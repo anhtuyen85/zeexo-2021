@@ -44,6 +44,16 @@ li.nav-item.is-hover {
     .nav--mobile {
         @extend %display-flex;
         @extend %align-items-center;
+        line-height: 24px;
+        padding: 8px 0;
+        &:hover {
+            svg path {
+                fill: var(--main-color);
+            }
+        }
+    }
+    svg path {
+        fill: var(--body-color);
     }
     .svg-element-ui {
         margin: 0;
@@ -55,7 +65,7 @@ li.nav-item.is-hover {
     display: flex;
     > li {
         &:not(:last-child) {
-            @include margin-end(20px);
+            @include margin-end(var(--gutter-lg));
         }
     }
 }

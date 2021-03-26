@@ -1,0 +1,24 @@
+.home-icon-box {
+    .d-grid {
+        align-self: flex-end;
+    }
+    .card_section-item-inner {
+        text-align: center;
+        .svg-element-ui {
+            margin: 0 auto;
+        }
+        .card_section-header {
+            margin: 0 auto 21px;            
+        }
+        .card_section-info {
+            p {
+                margin: 0 auto;                
+            }
+            .card_section-title {
+                font-size: var(--heading-size-h5);
+                font-weight: var(--heading-5-weight);
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
