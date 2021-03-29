@@ -91,8 +91,11 @@ a[data-target] *,
 [data-item-remove] * {
     pointer-events: none;
 }
-svg path {
-    @extend %transition;
+svg {
+    max-width: 100%;
+    path {
+        @extend %transition;
+    }
 }
 p {
     margin: 2rem 0;
@@ -432,8 +435,7 @@ img {
 .svg-element-ui {
     @extend %display-flex;
     @extend %align-items-center;
-    @extend %justify-content-center;
-    @include margin-start(10px);
+    @extend %justify-content-center;    
 }
 .product-price {
     color: var(--price-color);
@@ -496,7 +498,7 @@ img {
         padding: 0;
         margin: 0 5px;
         cursor: pointer; 
-        background: var(--main-color);
+        background: #000;
         @extend %radius-circle;
         @extend %transition;
         
@@ -509,6 +511,27 @@ img {
             opacity: 1;
             transform: scale(1);
         }
+    }
+}
+.slide_ui-controls--nav {
+    > button {
+        @extend %radius-circle;        
+        @include translateY(-50%);
+        @extend %display-flex;
+        @extend %align-items-center;
+        @extend %justify-content-center;
+        @extend %point-cursor;
+        z-index: layer(slide-ui);
+        opacity: 0.1;
+        width: 44px;
+        height: 44px;
+        background: #000;        
+    }
+    .slide_ui-btn-prev {
+        @include ab(50%, 20px, n, n);
+    }
+    .slide_ui-btn-next {
+        @include ab(50%, n, n, 20px);
     }
 }
 .tns-inner .tns-item {
@@ -525,6 +548,14 @@ img {
 }
 .slide-flex-preload.slide_ui-element:not(.tns-slider) {
     @extend %display-flex;
+}
+.section_content-body {
+    @extend %position-relative;
+    .tns-slider {        
+        @media (min-width: 768px) {
+            display: flex;
+        }
+    }
 }
 .breadcrumb-list {
     @extend %list-style-reset;
@@ -585,6 +616,78 @@ img {
         @include background-black-active;   
     }   
 }   
+.modal-ui {   
+    display: none; 
+    &.is-open {
+        display: block;
+        > div[data-dialog-close] { 
+            @include background-black-active;  
+        }
+    } 
+    > div[data-dialog-close] { 
+        @include background-black; 
+    }
+    &:not(.cart-drawer) { 
+        > div:not([data-dialog-close]) {  
+            @include fixed(50%, 50%, n, 0); 
+            border-radius: var(--border-radius-default);
+            z-index: layer(popup-content); 
+            animation: mmfadeIn .3s cubic-bezier(0,0,.2,1);            
+            background: var(--body-bg-color);
+            padding: var(--gutter-lg) var(--gutter-sm);          
+            width: calc(100% - var(--gutter-lg));
+            max-width: 700px;
+            max-height: 95vh;  
+            overflow: hidden;
+            overflow-y: auto;
+            transform: translate(-50%, -50.1%); 
+            animation: mmfadeIn .3s cubic-bezier(0,0,.2,1);
+            @media (min-width: 992px) {  
+                padding: var(--gutter-lg);  
+            }
+            > div {
+                width: 100%;
+                color: var(--body-color); 
+            }
+        }  
+        button[data-dialog-close] {
+            @extend %point-cursor;
+            @include ab(0, n, n, 0);
+            width: 45px;
+            height: 45px;
+            font-size: 40px;
+            color: var(--main-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            svg {
+                @extend %point-event;
+            }
+        }
+    }
+    #dialogNotify-content {
+        .dialog-body {
+            text-align: center;
+        }
+        .dialog-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            >a {
+                margin-top: var(--gutter-xs);
+                width: 100%;
+                text-align: center;
+                @media (min-width: 576px) {
+                    width: auto;
+                    &:not(:last-child) {
+                        @include margin-end(var(--gutter-xs));
+                    }
+                }
+            }
+        }
+    }
+}
 #backToTop {
     @include fixed(n, n, 55px, 20px);
     @extend %display-flex;
@@ -599,6 +702,9 @@ img {
     @media (min-width: 992px) {   
         bottom: 10px; 
     } 
+    .svg-element-ui {
+        margin: 0;
+    }
     svg {
         width: 15px;
         height: 15px;

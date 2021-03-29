@@ -3,6 +3,9 @@
     @extend %display-flex;
     @extend %align-items-center;    
     @extend %position-relative;
+    .svg-element-ui {
+        @include margin-start(10px);
+    }    
     .widget-social-icons {
         @extend %display-flex;
         @extend %align-items-center;

@@ -1,15 +1,9 @@
-.home-categories { 
-    .section_content-wrapper {
-        border-bottom: 1px solid var(--body-border-color);
-    }   
+.home-categories {     
     .card_section-item {
         margin-bottom: 30px;
     }
     .card_section-item-inner {
-        text-align: center;
-        .svg-element-ui {
-            margin: 0 auto;
-        }
+        text-align: center;        
         .card_section-header {
             margin: 0 auto 11px;            
         }

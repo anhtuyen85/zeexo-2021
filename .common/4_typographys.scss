@@ -35,3 +35,11 @@ h6, .h6 {
   font-size: var(--heading-size-h6);
   font-weight: var(--heading-6-weight);
 }
+.section_title-wrapper  {
+  .section_title-text-1 {
+    font-weight: var(--section-heading-fw);
+  }
+  .section_title-text-2 {
+    font-weight: var(--section-subheading-fw);
+  }
+}

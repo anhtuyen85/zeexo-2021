@@ -1,0 +1,90 @@
+.featured_block-category {
+    .menu_list-header {
+        p {
+            margin: 0 0 8px;
+            font-size: calc(var(--body-font-size) + 0.4rem);            
+            @extend %section-heading-cl;
+            @extend %fw-600;
+        }
+    }   
+    .menu_list-body {
+        ul {
+            @extend %list-style-reset;
+            li {                
+                a {
+                    display: inline-block;
+                    position: relative;
+                    &:after {
+                        content: '';
+                        width: 0;
+                        height: 1px;
+                        @extend %transition;
+                        @include ab(n, 0, 0, n);
+                    }
+                }
+            }             
+            &.menu_list-wrapper {
+                > li {
+                    padding: var(--gutter-xxs) 0;
+                    > a {                        
+                        @extend %fw-600;                     
+                        line-height: 1.1;
+                        font-size: calc(var(--body-font-size) + 0.2rem);
+                        @media (min-width: 1025px) {
+                            &:hover {                                
+                                color: var(--body-link-hover);  
+                                &:after {
+                                    width: 100%;
+                                    background: var(--body-link-hover);  
+                                }
+                            }
+                        }
+                    }
+                    .dropdown-menu {
+                        position: static;
+                        min-width: 100%;
+                        padding: var(--gutter-sm) 0 0;
+                        @include padding-start(var(--gutter-sm));
+                        li {                      
+                            padding: 4px 0;      
+                            a {
+                                line-height: 22px;                                
+                                @media (min-width: 1025px) {
+                                    &:hover {                                        
+                                        font-weight: 600;
+                                        color: var(--body-link);
+                                        &:after {
+                                            width: 100%;
+                                            background: var(--body-link);  
+                                        }
+                                    }
+                                }
+                            }
+                            .dropdown-menu {
+                                padding-bottom: var(--gutter-xxs);
+                            }
+                            &.active {
+                                > a {
+                                    @extend %fw-500;
+                                    &:after {
+                                        width: 100%;
+                                        background: var(--body-link);  
+                                    }
+                                }
+                            }
+                        }
+                    }  
+                    &.active {
+                        > a {
+                            color: var(--body-link-hover);  
+                            &:after {
+                                width: 100%;
+                                background: var(--body-link-hover);  
+                            }
+                        }
+                    }                  
+                }
+            }
+        }
+    }
+}

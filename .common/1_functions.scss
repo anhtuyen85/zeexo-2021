@@ -146,6 +146,25 @@
     background-color: var(--main-color);
     border-radius: 5px;
 }
+@mixin bt-close {
+    @include ab(15px, n, n, 15px);
+    @extend %point-cursor;
+    @extend %radius-circle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;            
+    background: var(--main-color);
+    z-index: layer(close-button);
+    svg {
+        @extend %point-event;
+        width: 18px;
+        path {
+            fill: var(--main-text-color);
+        }
+    }
+}
 %color-swatch {
     width: 25px;
     height: 25px;
@@ -247,6 +266,30 @@
         }
     }
 }
+%label-product-deal {
+    .label_ui {
+        width: var(--gutter-xlg);
+        height: var(--gutter-xlg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        font-size: calc(var(--body-font-size) - 0.3rem);
+        @extend %radius-circle;
+        @media (min-width: 576px) {
+            width: 50px;
+            height: 50px;
+            font-size: var(--body-font-size);
+        }
+    }
+    .label_ui-sale {
+        background: var(--main-color);
+        color: var(--main-text-color);            
+        @media (min-width: 576px) {                 
+            font-size: calc(var(--body-font-size) + 0.2rem);
+        }
+    }
+}
 @mixin dropdown-menu {
     @extend %list-style-reset;  
     @include ab(100%, 0, n, n);  
@@ -257,6 +300,7 @@
     z-index: layer(dropdown-hidden); 
     transform-origin: 0 0 0;    
     display: none; 
+    box-shadow: 0 5px 5px rgba(0,0,0,0.1); 
 }
 @mixin visibility-hidden {
     visibility: hidden;   
@@ -273,6 +317,17 @@
 @mixin padding-mobile {
     padding-left: 7.5px;
     padding-right: 7.5px;
+}
+@mixin figure-image {
+    display: block;
+    position: relative;
+    padding-top: 100.0%;
+    img {
+        @include ab(0, 0, n, n);
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
 }
 @mixin svg-loading {    //mask-image change color svg
     width: 18px;
@@ -469,4 +524,5 @@ $layer: (
     search-list: 990,
     footer-menu: 100, 
     map-overlay: 999, 
+    slide-ui: 9,
 );

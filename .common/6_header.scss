@@ -90,19 +90,22 @@
         }        
     }
 }
-.header-row-2 {    
+.header-row-2 {   
+    @extend %position-relative; 
     .secondary-menu-wrapper {
         @include margin-start(auto);
     }
 }
 .horizontal-menu {
     > .main-menu {
-        > li {       
-            @extend %position-relative;
+        > li {                   
             > a {
                 display: block;
                 line-height: 25px;
                 padding: 5px 0;
+            }
+            &:not(.nav-mm) {
+                @extend %position-relative;
             }
         }
     }

@@ -6,8 +6,7 @@
     }
     .sub__text-wrapper {
         @extend %flex-wrap;
-        .svg-element-ui {
-            margin: 0;
+        .svg-element-ui {         
             @include margin-end(12px);
         }
     }

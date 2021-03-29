@@ -9,7 +9,10 @@
     .form-subscribe {        
         @extend %display-flex;
         @extend %flex-wrap;
-        @extend %align-items-center;        
+        @extend %align-items-center;    
+        > * {
+            margin-bottom: var(--gutter-xs);
+        }    
         input[type="email"] {
             background: #fff;
             box-shadow: 0 20px 20px -10px rgba(0, 0, 0, 0.05);
