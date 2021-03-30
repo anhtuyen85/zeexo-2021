@@ -1,0 +1,9 @@
+.collection-item {
+    margin: 0 auto var(--gutter-lg);
+    .collection-image {
+        margin: 0 auto var(--gutter-xxs);
+    }
+    .collection-title {
+        font-size: var(--heading-size-h5);
+    }
+}

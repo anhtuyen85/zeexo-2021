@@ -1,0 +1,53 @@
+.pagination-holder {
+    padding: var(--gutter-lg) 0;
+    border-top: 1px solid var(--body-border-color);
+    margin: var(--gutter-lg) 0;
+}
+.pagination {
+    @extend %display-flex;
+    @extend %flex-wrap;
+    @extend %align-items-center;
+    @extend %justify-content-center;
+    @extend %list-style-reset;
+    li {
+        a {            
+            width: 34px;
+            height: 34px;            
+            text-align: center;
+            border-radius: var(--border-radius-default);
+            @extend %fw-500;
+            @extend %display-flex;
+            @extend %align-items-center;
+            @extend %justify-content-center;
+            &.next, &.prev {
+                width: auto;
+                @media (min-width: 1025px) {
+                   &:hover {
+                    background: transparent;
+                    svg path {
+                        fill: var(--main-color);                        
+                    }
+                   }
+                }
+            }
+            svg path {
+                fill: var(--body-color);
+            }
+            @media (min-width: 1025px) {
+                &:hover {
+                    background: var(--main-color);
+                    color: var(--main-text-color);    
+                }
+            }
+        }
+        &.active {
+            a {
+                background: var(--main-color);
+                color: var(--main-text-color);
+            }
+        }        
+        &:not(:last-child) {
+            @include margin-end(6px);
+        }
+    }
+}

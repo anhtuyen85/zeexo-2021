@@ -1,0 +1,124 @@
+/* Section video - Video in the page */
+.home-custom-content,
+.block-video {
+    .video__ui-placeholder {
+        
+    }
+    .video__ui-wrapper {
+        position: relative;        
+        .video__ui-item {
+            height: 100%;
+            width: 100%;
+            video {
+                object-fit: cover;
+            }            
+        } 
+        .video__ui-btn {
+            display: flex;
+            align-items: center;  
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            .btn {
+                margin: 0 auto !important;
+                padding: 0 !important;
+                width: 70px;
+                height: 70px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                @extend %radius-circle;   
+                @media (min-width: 576px) {
+                    width: 105px;
+                    height: 105px;
+                }
+                svg {
+                    display: flex;
+                    @media (max-width: 575px) {
+                        width: 16px;
+                    }
+                    path {
+                        @extend %transition;
+                    }      
+                }       
+            }  
+            .btn-video-close {
+                display: none;
+            }
+        } 
+        .btn-1 {
+            svg path {
+                fill: var(--btn1-cl);
+            }
+            &:hover {
+                svg path {
+                    fill: var(--btn1-hover-cl);
+                }
+            }
+        }
+        .btn-2 {
+            svg path {
+                fill: var(--btn2-cl);
+            }
+            &:hover {
+                svg path {
+                    fill: var(--btn2-hover-cl);
+                }
+            }
+        }
+        .btn-3 {
+            svg path {
+                fill: var(--btn3-cl);
+            }
+            &:hover {
+                svg path {
+                    fill: var(--btn3-hover-cl);
+                }
+            }
+        }
+        &.video__ui-has-placeholder {
+            .video__ui-item {                
+                visibility: hidden;
+            }
+        }        
+    }
+    .video-playing {
+        .video__ui-has-placeholder {
+            .video__ui-item {                
+                visibility: visible;
+                
+            }
+        }
+        .video__ui-btn {
+            width: auto;
+            height: auto;
+            left: auto;
+            right: 0;
+            .btn {
+                width: 40px;
+                height: 40px;
+                border-radius: 0;    
+                @media (min-width: 1025px) {
+                    visibility: hidden;
+                    opacity: 0;
+                }            
+            }
+            .button-label {
+                display: none;
+            }
+            .btn-video-close {
+                display: flex;                
+            }
+        }
+        @media (min-width: 1025px) {
+            &:hover {
+                .video__ui-btn .btn {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+/* End Section video - Video in the page */

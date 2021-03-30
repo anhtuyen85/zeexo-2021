@@ -191,6 +191,12 @@
     @extend %display-flex;
     @extend %align-items-center;  
     > li {
+        a {
+            @extend %display-flex;
+            @extend %align-items-center;  
+            line-height: 20px;
+            padding: var(--gutter-xxs) 0;
+        }
         svg path {
             fill: var(--body-color);
         }
@@ -203,7 +209,9 @@
     @extend %display-flex;
     @extend %align-items-center;  
     @extend %justify-content-between;
-    padding: var(--gutter-sm) 0;
+    padding: 0 0 var(--gutter-sm);
+    margin: 0 auto 50px;
+    border-bottom: 1px solid var(--body-border-color);
     > div {
         @extend %display-flex;
         @extend %align-items-center;  
@@ -220,6 +228,7 @@
             @extend %display-flex;
             @extend %align-items-center;  
             @extend %fw-500;
+            line-height: 20px;
             padding: 9px var(--gutter-md);
             border: 1px solid var(--body-border-color);
             border-radius: var(--border-radius-default);
@@ -240,6 +249,7 @@
         @extend %display-flex;
         @extend %align-items-center;  
         line-height: 22px;
+        padding: 9px 0;
         .toolbar-show--value,
         .toolbar-sort--value {
             @extend %fw-500;

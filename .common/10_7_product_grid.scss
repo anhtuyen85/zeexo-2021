@@ -1,7 +1,36 @@
+.collection-heading {
+    @extend %display-flex;
+    @extend %align-items-center;    
+    > a {
+        color: var(--main-color);        
+        margin-top: var(--gutter-xxs);
+        display: inline-block;        
+        @include margin-start(var(--gutter-sm));
+        @extend %position-relative;
+        @media (min-width: 1025px) {
+            &:after {
+                content: '';
+                height: 1px;
+                width: 100%;
+                background: var(--main-color);
+                transition: all 0.35s ease-in-out 0s;
+                @include ab(n, 0, 0, n);
+            }
+            &:hover {
+                text-decoration: none;
+                &:after {
+                    width: 0;
+                    left: 50%;
+                    right: 50%;
+                }
+            }
+        }
+    }
+}
 .home-products-grid {    
     .row {
-        margin-left: var(--gutter-xxs);
-        margin-right: var(--gutter-xxs);
+        margin-left: calc(-1* var(--gutter-xxs));
+        margin-right: calc(-1* var(--gutter-xxs));
         > * {
             padding-left: var(--gutter-xxs);
             padding-right: var(--gutter-xxs);

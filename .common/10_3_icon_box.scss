@@ -3,7 +3,9 @@
         align-items: flex-end;
     }
     .card_section-item-inner {
-        text-align: center;
+        text-align: center;        
+        flex: 1;
+        min-width: 0;
         .svg-element-ui {
             margin: 0 auto;
         }
@@ -19,6 +21,24 @@
                 font-weight: var(--heading-5-weight);
                 margin-bottom: 20px;
             }
+        }        
+    }
+    .card_section-item {
+        @extend %display-flex;
+        @extend %align-items-center;
+        margin-bottom: var(--gutter-xlg);
+    }
+    .next-step-icon {        
+        display: none; 
+        @media (min-width: 768px) {
+            display: block;
+            @include padding-start(var(--gutter-lg));
         }
+    }
+    &.border-top-true {
+        border-top: 1px solid var(--body-border-color);
+    }
+    &.border-bottom-true {
+        border-bottom: 1px solid var(--body-border-color);
     }
 }

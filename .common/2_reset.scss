@@ -312,8 +312,7 @@ textarea {
     }
 } 
 .spr-starrating, .spr-starratings {
-    .spr-icon {
-        @include margin-end(2px);
+    .spr-icon {        
         top: 0;
         color: var(--rating-star-color); 
         &:before {  
@@ -322,6 +321,9 @@ textarea {
         &.spr-icon-star-empty {
             color: var(--rating-star-empty-color);   
         } 
+        &:not(:last-child) {
+            @include margin-end(2px);
+        }
     } 
 }
 .ssw-stars, .ssw-starsd, .ssw-stars-avg {          //app Growave  
@@ -515,17 +517,8 @@ img {
 }
 .slide_ui-controls--nav {
     > button {
-        @extend %radius-circle;        
-        @include translateY(-50%);
-        @extend %display-flex;
-        @extend %align-items-center;
-        @extend %justify-content-center;
-        @extend %point-cursor;
-        z-index: layer(slide-ui);
-        opacity: 0.1;
-        width: 44px;
-        height: 44px;
-        background: #000;        
+       @extend %btn-control;
+       z-index: layer(slide-ui);        
     }
     .slide_ui-btn-prev {
         @include ab(50%, 20px, n, n);

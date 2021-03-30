@@ -41,8 +41,8 @@
                     height: var(--gutter-sm);
                     line-height: var(--gutter-sm);    
                     font-size: 9px;                      
-                    background: var(--main-color);
-                    color: #fff;
+                    background: var(--header-bg-cart-number-desk);
+                    color: var(--header-text-cart-number-desk);
                  }
                 @media (min-width: 1025px) {
                     &:hover {
@@ -86,11 +86,6 @@
         }
     }
 }
-.header-border-wrapper {
-    .header-border-item {
-        border-top: 1px solid var(--body-border-color);
-    }
-}
 .topbar-left {
     .select-dropdown-group-ui {
         @extend %display-flex;
@@ -127,7 +122,8 @@
     p {
         margin: 0 auto;
         line-height: 25px;
-        padding: 5px 0;        
+        padding: 5px 0;   
+        color: var(--header-text-color-desk);
     }
 }
 /* End Topbar */

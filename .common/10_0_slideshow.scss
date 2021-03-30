@@ -1,0 +1,234 @@
+/* Section Slideshow */
+.templateIndex {
+    .slideshow-wrapper:not(.tns-slider) > div:not(:first-child) {
+        display: none;
+    }
+}
+.home-slideshow {
+    .section-content {
+        position: relative;
+    }
+    &.layout-full {
+        .slideshow-controls > button {           
+            @media (min-width: 1400px) {
+                &.slideshow-btn-prev {
+                    left: var(--gutter-sm);
+                }
+                &.slideshow-btn-next {
+                    right: var(--gutter-sm);
+                }
+            }
+        }
+    }
+    .slideshow-wrapper {
+        &:not(.tns-slider) .slide-content-inner {
+            opacity: 0;  
+        }
+        .slide-content-inner > div {
+            position: relative;
+            -webkit-animation-fill-mode: backwards;
+            -moz-animation-fill-mode: backwards;
+            -ms-animation-fill-mode: backwards;
+            -o-animation-fill-mode: backwards;
+            animation-fill-mode: backwards;
+            -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1; 
+        }
+    }
+}
+.slide-bg-image {
+	display: block; 
+	background-size: cover;  
+	background-repeat: no-repeat;
+}
+.slideshow-wrapper { 
+    .slide-item {
+        position: relative;
+    }   
+    .slide-content-wrapper {
+        padding: 0 var(--gutter-xs);
+        width: 100%;
+        max-width: 1270px;
+        margin: 0 auto;           
+        @include ab(0, 0, 0, 0);        
+        .overlay-ui {                               
+            &.slide-content-inner {
+                padding: 0 var(--gutter-xs);               
+            }
+            &.content_direction-horizontal {
+                @media (min-width: 768px) {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    padding: 0 var(--gutter-xlg);
+                }    
+                .btn {
+                    white-space: nowrap;
+                    border: none;
+                }            
+            }
+            &:not(img) {
+                @extend %absolute-content;    
+            }
+        }
+    }
+    .overlay-ui {                
+        @include translate(0, -50%);
+        @include ab(50%, 0, n, n);
+    } 
+    .content-text-1 {
+        line-height: 1.2;
+        margin: 0 0 var(--gutter-xs);
+        font-size: 7rem;
+        @extend %fw-600;
+        @extend %section-heading-cl;
+    }
+    .content-text-2 {
+        line-height: 35px;
+        margin: 0 0 var(--gutter-sm);
+        color: var(--body-color);
+        font-size: 2.4rem;
+    }
+    .content-image {
+        .image__style {
+            max-width: 220px;
+            padding-top: 0 !important;
+            display: inline-block !important;
+            img {
+                height: auto;
+                position: static;                
+                @include translate(0, 0);
+            }
+        }
+    }
+    .content-svg {             
+        font-size: 1.6rem;
+        margin: 0 calc(-1 * var(--gutter-sm)) var(--gutter-sm);        
+        > div {
+            display: inline-flex;          
+            align-items: center;
+            padding: 5px var(--gutter-sm);
+            .slide-svg-item {
+                @include margin-end(var(--gutter-ct));  
+                display: flex;
+            }            
+        }
+    } 
+    .price {
+        @extend %fw-600;
+        font-size: 7rem;        
+    }
+    .price-compare {
+        font-size: 3rem;
+        padding-top: 11px;
+    }   
+    .content-product_label {
+        .label_ui {
+            display: inline-block;
+        }
+    }
+    .content-product {
+        margin: 0 0 var(--gutter-sm);
+        .product-price {
+            display: inline-flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            line-height: 1.2;
+            margin: 0;
+            > span {
+                &:first-child {
+                    @include margin-end(var(--gutter-xxs));
+                }
+                &:last-child {
+                    padding-top: 9px;
+                }
+            }
+        }
+    }
+    .content-sale-label {
+        width: 66px;
+        height: 66px;
+        line-height: 1.2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;        
+        font-weight: 700;
+        font-size: 4.5rem;
+        background-color: var(--btn1-bg-cl);
+        color: var(--btn1-cl);
+        -webkit-animation-fill-mode: backwards;
+        -moz-animation-fill-mode: backwards;
+        -ms-animation-fill-mode: backwards;
+        -o-animation-fill-mode: backwards;
+        animation-fill-mode: backwards;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+        @extend %radius-circle;
+        @media (min-width: 768px){
+            width: 133px;
+            height: 133px;
+        }
+        &.overlay-ui {                        
+            @include translate(-54%, -20%);
+            @include ab(20%, 54%, n, n);
+        }
+        .sale-label {
+            display: flex;
+        }
+    }    
+    .form-search-ui {
+        margin-bottom: var(--gutter-lg);        
+        form {
+            max-width: 520px;
+            background: #fff;
+            button {
+                padding: 0 var(--gutter-md);
+            }
+            svg {
+                width: 22px;
+            }
+        }
+        input {
+            height: 60px;
+            background: #fff;
+            font-size: calc(var(--body-font-size) + 0.4rem);
+            @include padding-start(var(--gutter-md));
+        }
+    }
+    &.tns-slider {
+        .slide-content-wrapper {
+            .overlay-ui {                                   
+                &.slide-content-inner {                    
+                    @media (max-width: 1390px) {
+                        padding: 0 70px;
+                    }
+                    @media (max-width: 767px) {
+                        padding: 0 35px;
+                    } 
+                }
+            }
+        }
+        .slide-banner:not(.lazyloaded) {
+            visibility: hidden;
+        }
+    }    
+}
+.slideshow-controls {
+    > button {       
+        z-index: layer(control-button);
+        @extend %btn-control;    
+        &[disabled] {
+            opacity: 0.1;
+            cursor: auto;
+        }           
+        &.slideshow-btn-prev {
+            left: 0;
+        }
+        &.slideshow-btn-next {
+            right: 0;
+        }
+    }
+}
+/* End Section Slideshow */

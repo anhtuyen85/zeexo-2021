@@ -1,0 +1,18 @@
+.featured_group_tab-ui {
+    .featured_group_tab-list-link {
+        @extend %list-style-reset;
+        @extend %display-flex;
+        @extend %align-items-center;
+        li {
+            .nav-link {
+                @extend %fw-500;
+                display: block;
+                padding: var(--gutter-xxs) 0;
+                font-size: var(--heading-size-h6);
+            }
+            &:not(:last-child) {
+                @include margin-end(var(--gutter-sm));
+            }
+        }
+    }
+}

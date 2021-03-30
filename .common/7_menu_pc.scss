@@ -39,28 +39,19 @@
         box-shadow: 0 5px 5px rgba(0,0,0,0.1); 
     } 
 }
-li.nav-item.is-hover { 
-    @media (min-width: 992px) { 
-        .block-mega-menu, .dropdown-menu-include  { 
-            z-index: layer(dropdown-visible); 
-            display: block;
-            animation-name: animation-hover-menu;
-            animation-delay: 150ms;
-            animation-fill-mode: both;
-            animation-duration: 340ms;
-        }  
-    }
-}
-li.nav-item.is-hover { 
-    @media (min-width: 992px) { 
-        .block-mega-menu, .dropdown-menu-include  { 
-            z-index: layer(dropdown-visible); 
-            display: block;
-            animation-name: animation-hover-menu;
-            animation-delay: 150ms;
-            animation-fill-mode: both;
-            animation-duration: 340ms;
-        }  
+li.nav-item {
+    &.is-hover,
+    &.adm-active { 
+        @media (min-width: 992px) { 
+            .block-mega-menu, .dropdown-menu-include  { 
+                z-index: layer(dropdown-visible); 
+                display: block;
+                animation-name: animation-hover-menu;
+                animation-delay: 150ms;
+                animation-fill-mode: both;
+                animation-duration: 340ms;
+            }  
+        }
     }
 }
 .block-mega-menu-item {
@@ -210,6 +201,7 @@ li.nav-item.is-hover {
     .featured_product-special {
         &.show-border {            
             border: 3px solid var(--special-border);            
+            border-radius: var(--border-radius-default);
             .featured_product__item, .empty_card {
                 @media (min-width: 768px) {
                     padding: var(--gutter-sm) var(--gutter-md);
@@ -249,13 +241,14 @@ li.nav-item.is-hover {
         line-height: 24px;
         padding: 8px 0;
         &:hover {
+            color: var(--main-color);
             svg path {
                 fill: var(--main-color);
             }
         }
     }
     svg path {
-        fill: var(--body-color);
+        fill: var(--header-text-color-desk);
     }
     .svg-element-ui {
         margin: 0;
