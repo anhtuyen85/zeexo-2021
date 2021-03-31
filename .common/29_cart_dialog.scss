@@ -6,7 +6,7 @@
         justify-content: center;
         background: #12A05C;
         color: var(--main-text-color);
-        border-radius: var(--border-radius-default);
+       @extend %radius-default;
         font-size: calc(var(--body-font-size) - 0.4rem);
         font-weight: 700;
         line-height: 17.34px;
@@ -108,7 +108,7 @@
                 .cart-item-info {
                     border: 1px solid var(--body-border-color);
                     padding: var(--gutter-xs);
-                    border-radius: var(--border-radius-default);
+                   @extend %radius-default;
                     display: flex;
                     align-items: center;
                     justify-content: row;

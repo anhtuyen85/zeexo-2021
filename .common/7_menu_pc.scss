@@ -17,7 +17,7 @@
                 top: 0;
                 left: 100%;
             } 
-            @media (min-width: 1025px) { 
+            @media (hover: hover) { 
                 &:hover {  
                     >.dropdown-menu {   
                         z-index: layer(dropdown-visible);
@@ -201,7 +201,7 @@ li.nav-item {
     .featured_product-special {
         &.show-border {            
             border: 3px solid var(--special-border);            
-            border-radius: var(--border-radius-default);
+           @extend %radius-default;
             .featured_product__item, .empty_card {
                 @media (min-width: 768px) {
                     padding: var(--gutter-sm) var(--gutter-md);

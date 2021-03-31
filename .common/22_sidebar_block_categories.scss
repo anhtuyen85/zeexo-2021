@@ -30,7 +30,7 @@
                         @extend %fw-600;                     
                         line-height: 1.1;
                         font-size: calc(var(--body-font-size) + 0.2rem);
-                        @media (min-width: 1025px) {
+                        @media (hover: hover) {
                             &:hover {                                
                                 color: var(--body-link-hover);  
                                 &:after {
@@ -49,7 +49,7 @@
                             padding: 4px 0;      
                             a {
                                 line-height: 22px;                                
-                                @media (min-width: 1025px) {
+                                @media (hover: hover) {
                                     &:hover {                                        
                                         font-weight: 600;
                                         color: var(--body-link);

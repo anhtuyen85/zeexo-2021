@@ -7,7 +7,7 @@
         display: inline-block;        
         @include margin-start(var(--gutter-sm));
         @extend %position-relative;
-        @media (min-width: 1025px) {
+        @media (hover: hover) {
             &:after {
                 content: '';
                 height: 1px;

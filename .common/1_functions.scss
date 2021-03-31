@@ -122,6 +122,9 @@
 %radius-circle {
     border-radius: 50%;
 }
+%radius-default {
+    border-radius: var(--border-radius-default);
+}
 %section-heading-cl {
     color: var(--section-heading-cl);
 }
@@ -145,6 +148,18 @@
 %webkit-scrollbar-thumb {
     background-color: var(--main-color);
     border-radius: 5px;
+}
+%effect-image {
+    position: relative;
+    overflow: hidden;        
+    img {
+        transition: transform 2s cubic-bezier(0,0,.44,1.18); 
+    }
+}
+@mixin effect-image-hover {
+    img {
+        transform: scale(1.09);
+    }
 }
 @mixin bt-close {
     @include ab(15px, n, n, 15px);
@@ -189,7 +204,7 @@
         @include ab(-4px, -4px, -4px, -4px);
     }   
     &:hover {
-        @media (min-width: 1025px) {
+        @media (hover: hover) {
             &:before {
                 opacity: 1;
             }
@@ -205,7 +220,7 @@
         box-shadow: 0 0 1px 1px rgba(var(--main-color-rgba), 0.15);
     }
     &:hover {
-        @media (min-width: 1025px) {
+        @media (hover: hover) {
             border-color: transparent;
         }
     }
@@ -214,7 +229,7 @@
     @extend %font-size-3;  
     @extend %fw-600;      
     @extend %transition;
-    border-radius: var(--border-radius-default);
+   @extend %radius-default;
     border: 1px solid var(--body-border-color);
     background: var(--body-bg-color);
     padding: 3px 18px;
@@ -222,7 +237,7 @@
     line-height: 18px; 
     text-align: center;   
     &:hover {
-        @media (min-width: 1025px) {            
+        @media (hover: hover) {            
             box-shadow: inset 0 0 0 2px var(--main-color);
         }
     }     
@@ -243,7 +258,7 @@
                 @extend %justify-content-center;                
                 width: 34px;
                 height: 34px;
-                border-radius: var(--border-radius-default);
+               @extend %radius-default;
                 .social-label {
                     display: none;
                 }

@@ -25,7 +25,7 @@
     }
     table {
         border: 1px solid var(--body-border-color);
-        border-radius: var(--border-radius-default);
+       @extend %radius-default;
         @extend %font-size-2;
         th, td {
             padding: var(--gutter-xxs) var(--gutter-sm);
@@ -114,7 +114,7 @@
                 input.swt-type-image:checked + label { 
                     border-color: var(--main-color);
                     &:hover {
-                        @media (min-width: 1025px) {
+                        @media (hover: hover) {
                             border-color: var(--main-color); 
                         }
                     } 

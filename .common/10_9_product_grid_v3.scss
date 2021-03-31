@@ -1,0 +1,37 @@
+/* Section Product Grid V3 */
+.featured_block-special-item {
+    position: relative;
+    overflow: hidden;    
+}
+.home-products-grid-v3 {  
+    .featured_block-special-item {
+        @extend %radius-default;
+        img {
+            object-fit: cover;           
+        }
+    }
+    .block_content-svg-inner {
+        margin: 0 calc(-1 * var(--gutter-xs));
+        > div {
+            display: inline-flex;
+            align-items: center;
+            padding: 0 var(--gutter-xs) var(--gutter-xxs);
+            .svg-element-ui {
+                @include margin-end(var(--gutter-ct));  
+            }
+        }
+    }
+    .featured_block-content {
+        max-width: 100%;
+        .card_section-product {
+            .card_section-price {                
+                display: inline-block;
+                @include padding-end(7px);
+            }
+            del {
+                vertical-align: top;
+            }
+        }
+    }
+}
+/* End Section Product Grid V3 */

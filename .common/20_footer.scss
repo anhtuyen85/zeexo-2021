@@ -78,18 +78,7 @@
         font-weight: var(--footer-heading-fw);
         font-size: var(--footer-heading-fs);
         font-family: var(--font-heading);
-    }
-    &.card_footer-text {
-        .card_footer-title {
-            margin-bottom: var(--gutter-md);
-        }
-        .card_footer-text-1 {
-            border-radius: var(--border-radius-default);
-            border: 1px solid var(--footer-copyright-border-top);
-            padding: var(--gutter-xxs) var(--gutter-sm);
-            margin-bottom: var(--gutter-sm);
-        }
-    }  
+    }    
     .card_footer-body {
         ul {
             list-style-type: none;
@@ -114,21 +103,29 @@
                 color: inherit;
                 margin: 0;
             }
-        }
-        .card_footer-text-1 p {
-            padding: 5px 0;
-        }         
+        }             
         .card_footer-text-2 {
             @extend %font-size-3;
         }
+    }    
+    &.border-right {
+        @include padding-end(20%);
     }
     &.card_footer-text {
+        .card_footer-title {
+            margin-bottom: var(--gutter-md);
+        }
+        .card_footer-text-1 {
+           @extend %radius-default;
+            border: 1px solid var(--footer-copyright-border-top);
+            padding: var(--gutter-xxs) var(--gutter-sm);
+            margin-bottom: var(--gutter-sm);
+        }
         .card_footer-body {
             .card_footer-text-1 p {
                 @extend %font-size-2;        
                 @extend %fw-500;          
-                line-height: 20px;
-                padding: 0 0 10px;
+                line-height: 20px;                
             } 
         }
         .card_footer-button {
@@ -165,7 +162,7 @@
                 svg path {
                     fill: var(--footer-link-cl);
                 }
-                @media (min-width: 1025px) {
+                @media (hover: hover) {
                     &:hover {
                         svg path {
                             fill: var(--footer-link-hover-cl);
@@ -176,8 +173,35 @@
         }
     }    
 }
+.copyright-content-container {
+    ul {
+        @extend %list-style-reset;
+        @extend %display-flex;
+        @extend %flex-wrap;
+        @extend %align-items-center;
+        @extend %justify-content-center;
+        margin-bottom: 9px;
+        @media (min-width: 768px) {
+            justify-content: flex-start;
+        }
+        li {
+            a {
+                display: block;
+                line-height: 22px;
+                padding: 3px 0;
+            }
+            &:not(:last-child) {
+                @include margin-end(var(--gutter-lg));
+            }
+        }
+    }
+}
 .copyright-content {
     color: var(--footer-copyright-cl);
+    text-align: center;
+    @media (min-width: 768px) {
+        text-align: left;
+    }
     p {
         margin: 5px 0;
         @extend %font-size-3;

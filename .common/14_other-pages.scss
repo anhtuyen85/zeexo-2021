@@ -1,0 +1,149 @@
+/* Account page */
+.form-account {
+   @extend %radius-default;
+    border: 1px solid var(--body-border-color);
+    max-width: 600px;
+    padding: 7%;
+    margin: 0 auto;
+    @media (min-width: 576px) {
+        padding: 5%;
+    }
+    .form-control {
+        margin: 0 0 var(--gutter-lg);
+        label {
+            display: block;
+            line-height: 1.1;
+            margin: 0 0 6px;
+            @extend %font-size-3;
+            @extend %fw-600;
+            @extend %section-heading-cl;
+        }
+        input {
+            width: 100%;
+        }
+    }
+    .action_bottom {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        .btn {
+            height: auto;
+            margin-bottom: var(--gutter-xxs);
+            &:focus {        
+                box-shadow: inset 0 0 0 0 var(--main-color);
+            }
+        }
+        p {
+            flex: 0 0 100%;
+            max-width: 100%;    
+            text-align: center;
+        }
+        .action_line {
+            text-align: center;            
+        }
+    }
+    .note, p {
+        a:not(.btn) {
+            @media (hover: hover) {
+                &:hover {
+                    color: var(--special-border);
+                }
+            }
+        } 
+    }
+    .note {
+        margin: 0 var(--gutter-xxs) var(--gutter-xxs);        
+        @media (max-width: 519px) {
+            display: block;
+            text-align: center;
+            flex: 0 0 calc(100% - 20px);
+            max-width: calc(100% - 20px);
+        }
+    }
+    p {
+        &:last-child {
+            margin-bottom: 0;
+            margin-top: var(--gutter-xxs);
+        }
+    }
+}
+#customer_login {      
+    #forgot_password {
+        margin: var(--gutter-xxs) 0 0;
+    }    
+}
+/* wishlist */
+.arn-wishlist-page .page-arn-wishlist table {
+    @media (min-width: 768px) {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        overflow-x: auto;  
+    }
+    .product-price {
+        @media (min-width: 768px) {
+            display: table-cell; 
+        } 
+    }
+    td:before {
+        @media (max-width: 767px) {
+            color: var(--body-color);
+        }
+    }
+    .product-image img {
+        height: auto;
+    }
+    .product-quantity input {
+        max-width: 140px; 
+        padding: 0 10px; 
+        text-align: center;
+    }
+    .product-detail { 
+        .view-btn {
+            display: inline-block; 
+            margin: 5px; 
+            white-space: nowrap; 
+            padding: var(--gutter-xxs) 40px;
+            line-height: 26px; 
+            font-weight: var(--btn1-fw);
+            color: var(--btn1-cl);
+            background: var(--btn1-bg-cl);
+            border: var(--btn1-border-width) solid var(--btn1-border-cl);    
+            border-radius: var(--border-radius-default);             
+            &:hover {
+                color: var(--btn1-hover-cl);
+                background: var(--btn1-hover-bg-cl);
+                border-color: var(--btn1-hover-border-cl);   
+            }
+            &:last-child {
+                color: var(--btn2-cl);
+                background: var(--btn2-bg-cl);
+                border: var(--btn2-border-width) solid var(--btn2-border-cl); 
+                &:hover {
+                    color: var(--btn2-hover-cl);
+                    background: var(--btn2-hover-bg-cl);
+                    border-color: var(--btn2-hover-border-cl);
+                }
+            }
+        }
+    }
+}
+/* Compare */
+.arn-compare-page .page-arn-compare {
+    .view-btn { 
+        white-space: nowrap; 
+        padding: var(--gutter-xxs) 40px;
+        line-height: 26px; 
+        font-weight: var(--btn1-fw);
+        color: var(--btn1-cl);
+        background: var(--btn1-bg-cl);
+        border: var(--btn1-border-width) solid var(--btn1-border-cl);    
+        border-radius: var(--border-radius-default);        
+        &:hover {
+            color: var(--btn1-hover-cl);
+            background: var(--btn1-hover-bg-cl);
+            border-color: var(--btn1-hover-border-cl);   
+        } 
+    }
+}

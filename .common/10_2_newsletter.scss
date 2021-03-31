@@ -16,7 +16,7 @@
         input[type="email"] {
             background: #fff;
             box-shadow: 0 20px 20px -10px rgba(0, 0, 0, 0.05);
-            border-radius: var(--border-radius-default);    
+           @extend %radius-default;    
             width: 100%;
             max-width: 386px;
             height: 46px;

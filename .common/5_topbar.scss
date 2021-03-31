@@ -1,4 +1,146 @@
 /* Topbar */
+.announcement-bar {
+    background: var(--topbar-bg-color);
+    color: var(--topbar-color);
+    position: relative;
+    min-height: var(--gutter-lg);
+    @extend %font-size-2;
+    @media (max-width: 1300px) {        
+        @include padding-end(var(--gutter-lg));
+    }
+    @media (min-width: 992px) {
+        z-index: layer(header-relative);    //fix black background hover menu; 
+    }  
+    p {
+        margin: 0;
+        padding: 6px 0;
+        line-height: 18px;
+        color: inherit;
+        b {
+            @extend %fw-600;
+        }
+    }
+    button.btn {
+        padding: 0;        
+        width: var(--gutter-lg);
+        height: var(--gutter-lg);
+        line-height: var(--gutter-lg);
+        text-align: center;
+        @include ab(50%, n, n, 0);
+        @include translateY(-50%);
+        svg path {
+            stroke: var(--topbar-color);
+        }
+    }
+    .menu-list,
+    .list-inline,
+    .select-dropdown-group-ui {
+        @extend %list-style-reset;
+        @extend %display-flex;
+        @extend %align-items-center;        
+    }
+    .menu-list,
+    .list-inline {        
+        > li {  
+            padding: 6px var(--gutter-xxs);
+            line-height: 18px;                     
+            > a {                
+                @extend %display-flex;
+                @extend %align-items-center;
+                color: var(--topbar-color);
+                svg path {
+                    fill: var(--topbar-color);
+                }
+            }
+        }
+    }
+    .menu-list {
+        > li {
+            padding-left: var(--gutter-xxs);
+            padding-right: var(--gutter-xxs);
+            @media (min-width: 1230px) {
+                padding-left: var(--gutter-sm);
+                padding-right: var(--gutter-sm);
+            }
+            &:not(:last-child) {                
+                @include border-inline-end(1px, solid, rgba(var(--topbar-border), 0.1));
+            }
+            > a {
+                padding: 0 5px;
+            }
+        }
+    }
+    .widget-social-icons {
+        padding: 0 var(--gutter-xxs);
+        @media (min-width: 1230px) {
+            padding-left: var(--gutter-xs);
+            padding-right: var(--gutter-xs);
+        }
+    }
+    .select-dropdown-group-ui {
+        > div {
+            padding: 6px var(--gutter-xs);
+            line-height: 18px;   
+            @media (min-width: 1230px) {
+                padding-left: var(--gutter-md);
+                padding-right: var(--gutter-md);
+            }
+            &:not(:last-child) {                
+                @include border-inline-end(1px, solid, rgba(var(--topbar-border), 0.1));
+            }          
+            > a {
+                @extend %display-flex;
+                @extend %align-items-center;
+                color: var(--topbar-color);                
+            }
+            .svg-element-ui {                
+                @include margin-start(var(--gutter-xxs));
+                @extend %display-flex;
+                @extend %align-items-center;
+                svg path {
+                    fill: var(--topbar-color);
+                }
+            }
+        }
+    }   
+    .annoubar-column {
+        @extend %display-flex;
+        @extend %flex-wrap;                
+        > div {
+            @extend %display-flex;
+            @extend %align-items-center;    
+            &.annoubar-colItem-text {
+                &:not(:last-child) {                    
+                    @include padding-end(var(--gutter-xxs));
+                    @media (min-width: 1230px) {                        
+                        @include padding-end(var(--gutter-sm));
+                    }
+                }
+            }     
+            &:not(:last-child) {                
+                @include border-inline-end(1px, solid, rgba(var(--topbar-border), 0.1));
+            }
+            &:last-child {
+                .select-dropdown-group-ui > div:last-child,
+                .widget-social-icons,
+                .menu-list > li:last-child, 
+                .menu-list > li:last-child > a,
+                .list-inline > li:last-child {                    
+                    @include padding-end(0);
+                }                
+            }  
+            &:first-child {
+                .select-dropdown-group-ui > div:first-child,
+                .widget-social-icons,
+                .menu-list > li:first-child, 
+                .menu-list > li:first-child > a,
+                .list-inline > li:first-child {                    
+                    @include padding-start(0);
+                }                
+            }             
+        }
+    }
+}
 .header-row {
     @extend %display-flex;
     @extend %align-items-center;    
@@ -44,7 +186,7 @@
                     background: var(--header-bg-cart-number-desk);
                     color: var(--header-text-cart-number-desk);
                  }
-                @media (min-width: 1025px) {
+                @media (hover: hover) {
                     &:hover {
                         .number {                            
                             animation-name: hvr-icon-bob-float, hvr-icon-bob;                            

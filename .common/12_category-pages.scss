@@ -95,7 +95,7 @@
                 content: '';
                 width: 20px;
                 height: 20px;                
-                border-radius: var(--border-radius-default);
+               @extend %radius-default;
                 border: 1px solid var(--body-border-color);
                 @extend %transition;
                 @include ab(0, 0, n, n);                                                
@@ -123,7 +123,7 @@
                 @extend %fw-600;
                 color: var(--body-link);
                 &:before {
-                    @media (min-width: 1025px) {
+                    @media (hover: hover) {
                         background: var(--main-color);
                         border-color: var(--main-color);
                     }
@@ -231,7 +231,7 @@
             line-height: 20px;
             padding: 9px var(--gutter-md);
             border: 1px solid var(--body-border-color);
-            border-radius: var(--border-radius-default);
+           @extend %radius-default;
             .svg-element-ui {
                 @include margin-end(13px);
                 svg path {
@@ -278,7 +278,7 @@
                 line-height: 1.2;
                 display: block;
                 padding: 5px 0;
-                @media (min-width: 1025px) {
+                @media (hover: hover) {
                     &:hover {
                         text-decoration: underline;
                     }
@@ -301,4 +301,7 @@
             display: none;
         }
     }    
+}
+.catalog-true {
+    
 }

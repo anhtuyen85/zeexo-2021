@@ -2,32 +2,22 @@
     .d-grid {
         align-items: flex-end;
     }
-    .card_section-item-inner {
-        text-align: center;        
+    .card_section-item-inner {    
         flex: 1;
-        min-width: 0;
+        min-width: 0;       
         .svg-element-ui {
             margin: 0 auto;
-        }
-        .card_section-header {
-            margin: 0 auto 21px;            
-        }
+        }        
         .card_section-info {
             p {
                 margin: 0 auto;                
             }
             .card_section-title {
                 font-size: var(--heading-size-h5);
-                font-weight: var(--heading-5-weight);
-                margin-bottom: 20px;
+                font-weight: var(--heading-5-weight);                
             }
         }        
-    }
-    .card_section-item {
-        @extend %display-flex;
-        @extend %align-items-center;
-        margin-bottom: var(--gutter-xlg);
-    }
+    }    
     .next-step-icon {        
         display: none; 
         @media (min-width: 768px) {
@@ -35,10 +25,49 @@
             @include padding-start(var(--gutter-lg));
         }
     }
+    .card_section-item {
+        @extend %display-flex;
+        @extend %align-items-center;
+    }
     &.border-top-true {
         border-top: 1px solid var(--body-border-color);
     }
     &.border-bottom-true {
         border-bottom: 1px solid var(--body-border-color);
+    }
+    &.style-1 {
+        .card_section-item-inner {
+            text-align: center;                            
+            .card_section-header {
+                margin: 0 auto 21px;            
+            }    
+            .card_section-figure {
+                margin: 0 auto;
+            }
+            .card_section-title {                
+                margin-bottom: 20px;
+            }              
+        }    
+        .card_section-item {           
+            margin-bottom: var(--gutter-xlg);
+        }
+    }
+    &.style-2 {        
+        padding: 9.5px 0;        
+        .card_section-item-inner {
+            @extend %display-flex;
+            @extend %align-items-center;
+            .card_section-header {
+              min-width: 20px;
+              @include margin-end(12.5px);
+            }
+            .card_section-body {
+                flex: 1;
+                min-width: 0;
+                p:not(.card_section-title) {
+                    line-height: 20px;
+                }
+            }
+        }
     }
 }
