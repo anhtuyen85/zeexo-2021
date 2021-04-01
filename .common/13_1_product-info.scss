@@ -1,4 +1,132 @@
+.product-media {
+    margin: 0 0 50px;
+    @media (min-width: 768px) {
+        margin-bottom: 87px;
+    }
+    > .slide_ui-element {
+        display: flex;
+        overflow: hidden;
+        > .feature-product-media {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+    .product-main-media {
+        position: relative;
+        overflow: hidden;
+        figure, .image__style, img {
+            @extend %radius-default;
+        }
+    }
+}
+.product-thumbail-media {
+    position: relative;
+    margin: var(--gutter-xxs) 0 0;
+    .row {
+        margin: 0 -6px;
+        flex-wrap: nowrap;
+        > div {
+            padding: 0 6px;
+        }
+    }
+    .thumbnail-media {
+        figure {
+            border: 2px solid transparent;
+            position: relative;
+            @extend %radius-default;
+            @extend %transition;
+            @media (min-width: 1025px) {
+                &:hover {
+                    border-color: var(--main-color);
+                }
+            }
+        }
+        svg {
+            width: 20px;
+            height: 20px;
+            @include ab(n, n, 0, 0);
+        }
+        .image__style, img {
+            @extend %radius-default;
+        }
+        img {
+            object-fit: contain;
+        }
+        &.tns-nav-active figure {
+            border-color: var(--main-color);
+        }
+    }
+    .slide_ui-controls--nav {        
+        button { 
+            width: var(--gutter-lg);
+            height: var(--gutter-lg);            
+            svg {
+                width: 7px;
+            }
+        }
+    }
+    .slide_ui-controls--nav button.slide_ui-btn-prev {
+        left: calc(-1 * var(--gutter-xs));        
+    }
+    .slide_ui-controls--nav button.slide_ui-btn-next {
+        right: calc(-1 * var(--gutter-xs));
+    }
+    &:hover {
+        @media (min-width: 1025px) {
+            .slide_ui-controls--nav button {
+                opacity: 1;
+            }
+        }
+    }
+}
 .product-info {
+    .product-title {  
+        margin: 0;      
+        h1, > a {
+            font-size: var(--heading-size-h4);
+            line-height: 1.2;
+            margin: 0 0 13px;            
+            @extend %fw-500;
+        }
+    }
+    .product-detail_short-description {     
+        ul {
+            @extend %list-style-reset;
+            li {
+                line-height: 21px;
+                padding: 2px 0;
+                @extend %display-flex;
+                @extend %section-heading-cl;                
+                img {
+                    margin-top: 7px;
+                    @include margin-end(var(--gutter-xxs));
+                }
+            }
+        }
+        .icon-list {
+            margin: 24px calc(-1 * var(--gutter-sm)); 
+            li {
+                padding-left: var(--gutter-sm);
+                padding-right: var(--gutter-sm);
+            }
+        }
+    }
+    .product-price {
+        border-top: 1px solid var(--body-border-color);
+        margin: 24px 0 0; 
+        padding: var(--gutter-md) 0;
+        line-height: 1.1;
+        font-size: calc(var(--heading-size-h4) + 0.1rem);                
+        align-items: flex-end;
+        @extend %display-flex;
+        @extend %fw-600;
+        .price-compare {
+            font-weight: var(--body-font-weight);
+            margin-bottom: 4px;
+            font-size: calc(var(--heading-size-h5) + 0.4rem);   
+            @include margin-start(5px);
+        }
+    }
     .share-links {     
         @extend %share-links;
     }
@@ -26,21 +154,8 @@
     p {
         margin: 3.2rem 0;
     }
-    .icon-list {
-        list-style: none;        
-        margin: var(--gutter-lg) calc(-1 * var(--gutter-sm));
-        @extend %display-flex;
-        @extend %flex-wrap;
-        > li {
-            padding-left: var(--gutter-sm);
-            padding-right: var(--gutter-sm);
-            @extend %display-flex;
-            @extend %align-items-center;
-            .svg-element-ui {
-                margin: 0;
-                @include margin-end(12px);
-            }
-        }
+    .icon-list {         
+        margin: var(--gutter-lg) calc(-1 * var(--gutter-sm));  
     }
     table {
         border: 1px solid var(--body-border-color);
@@ -72,7 +187,7 @@
         margin-bottom: 10px;
         .swatch-header p {
             margin: 0 0 8px;                                   
-            @extend %font-size-1;            
+            @extend %font-size-2;            
         }
         .swatch-container {
             margin: 0 -5px;

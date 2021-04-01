@@ -238,12 +238,14 @@
     text-align: center;   
     &:hover {
         @media (hover: hover) {            
-            box-shadow: inset 0 0 0 2px var(--main-color);
+            box-shadow: inset 0 0 0 1px var(--main-color);
+            border-color: var(--main-color);
         }
     }     
 }
 %size-swatch-active {
-    box-shadow: inset 0 0 0 2px var(--main-color);
+    box-shadow: inset 0 0 0 1px var(--main-color);
+    border-color: var(--main-color);
 }
 %label_ui-group {    
     @extend %display-flex;

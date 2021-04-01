@@ -233,10 +233,10 @@
             @extend %display-flex;
             @extend %align-items-center;  
             @extend %fw-500;
+            @extend %radius-default;
             line-height: 20px;
             padding: 9px var(--gutter-md);
-            border: 1px solid var(--body-border-color);
-           @extend %radius-default;
+            border: 1px solid var(--body-border-color);           
             .svg-element-ui {
                 @include margin-end(13px);
                 svg path {
@@ -260,8 +260,12 @@
             @extend %fw-500;
             @include margin-start(var(--gutter-xxs));
         }
-        .svg-element-ui {
-            @include margin-start(var(--gutter-xxs));
+        .svg-element-ui {            
+            @include margin-end(var(--gutter-xxs));
+            @media (min-width: 768px) {
+                margin: 0;
+                @include margin-start(var(--gutter-xxs));
+            }
         }               
     }
     .toolbar-sort-list,
@@ -306,6 +310,14 @@
             display: none;
         }
     }    
+}
+.layout-grid--1 {
+    @media (max-width: 991px) {
+        @include sidebarDrawer;
+    }
+}
+.layout-grid--2 {
+    @include sidebarDrawer;
 }
 .catalog-true {
     

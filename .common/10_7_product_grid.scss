@@ -1,6 +1,7 @@
 .collection-heading {
     @extend %display-flex;
     @extend %align-items-center;    
+    margin-bottom: var(--gutter-xs);
     > a {
         color: var(--main-color);        
         margin-top: var(--gutter-xxs);

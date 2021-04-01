@@ -136,7 +136,7 @@
             @extend %align-items-center;
             @extend %justify-content-center;
             svg path {
-                stroke: var(--body-color);
+                stroke: var(--main-color);
             }
             .svg-element-ui {
                 margin: 0;
@@ -242,6 +242,9 @@
     }     
     .header-search {
         flex: 1;
+        .form-search-ui form button svg {
+            width: 16px;
+        }
     }
 }
 .section-header-2 {

@@ -121,6 +121,9 @@ li.nav-item {
             font-weight: 700;
             font-size: calc(var(--heading-size-h1) - 1.4rem);
             color: var(--price-sale-color);
+            @extend %display-flex;
+            @extend %flex-wrap;
+            @extend %align-items-center;
             @media (min-width: 768px) {
                 line-height: 1.2; 
                 font-size: var(--heading-size-h1);
@@ -130,7 +133,7 @@ li.nav-item {
             font-size: var(--heading-size-h6);
             color: var(--price-compare-color);
             font-weight: var(--body-font-weight);
-            display: block;
+            @include padding-start(5px);
         }
     }
     .banner_section-button .btn {
@@ -172,6 +175,9 @@ li.nav-item {
     &.border-left {
         @include border-inline-start(1px, solid, var(--body-border-color));
     } 
+    .featured_product__item-review {
+        display: none;
+    }
     .menu_list-wrapper {
         @extend %list-style-reset;
         li a {
@@ -200,14 +206,15 @@ li.nav-item {
     }     
     .featured_product-special {
         &.show-border {            
-            border: 3px solid var(--special-border);            
+            border: 2px solid var(--special-border);            
            @extend %radius-default;
             .featured_product__item, .empty_card {
+                margin: 0;
+                padding: 16px;
                 @media (min-width: 768px) {
                     padding: var(--gutter-sm) var(--gutter-md);
                 }
-            }
-            @extend %label-product-deal;
+            }            
             .countdown-time {
                 margin: 0 auto var(--gutter-sm);
                 @media (max-width: 1199px) and (min-width: 992px) {

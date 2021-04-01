@@ -23,7 +23,10 @@ body {
     @extend %body-style;  
     @media (min-width: 992px) {
         -webkit-tap-highlight-color: transparent;
-    }      
+    }     
+    .boxed-wrapper {
+        overflow: hidden;
+    }
     &.menuMobile-is-active,
     &.modal-opened {
         overflow: hidden;
@@ -469,10 +472,10 @@ img {
     text-align: center;
     text-transform: uppercase;
     display: block;   
-    margin: 0;
-    @include margin-end(3px);
-    @extend %fw-700;
     border-radius: 3px;
+    margin: 0 0 5px;
+    @include margin-end(3px);
+    @extend %fw-700;    
 }
 .label_ui-sale {
     color: var(--sale-lb-cl);
@@ -523,10 +526,16 @@ img {
        z-index: layer(slide-ui);        
     }
     .slide_ui-btn-prev {
-        @include ab(50%, 20px, n, n);
+        @include ab(50%, 0, n, n);
+        @media (min-width: 768px) {
+            left: 20px;
+        }
     }
     .slide_ui-btn-next {
-        @include ab(50%, n, n, 20px);
+        @include ab(50%, n, n, 0);
+        @media (min-width: 768px) {
+            right: 20px;
+        }
     }
 }
 .tns-inner {

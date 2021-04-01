@@ -97,7 +97,7 @@
             margin-bottom: var(--gutter-xs);
             overflow: hidden;
         }
-        .featured_product__item-info {
+        .featured_product__item-body {
             .featured_product__item-name {
                 font-size: var(--product-item-name);
                 margin-bottom: 9px;
@@ -169,6 +169,23 @@
 		}  
 		.ssw-review-count {
 			display: none;
+		}
+	}
+    .featured_product__item-short-description {
+		margin: 15px 0;
+		line-height: 20px;			
+		@extend %font-size-2;	
+        .icon-list {
+            list-style: none;			            			
+        }	
+		ul, ol {			
+			li {
+                @extend %display-flex;							
+				padding: 2px 0;								
+                .svg-element-ui {
+                    @include margin-end(13px);
+                }            
+			}
 		}
 	}
     @media (hover: hover) {
