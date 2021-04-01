@@ -1,0 +1,25 @@
+/* Section Menu List */
+.section-content-wrapper {
+    .menu_list-header {
+        p {
+            margin: 0 0 22px;
+            line-height: 1.1;
+            font-size: calc(var(--body-font-size) + 0.2rem);
+            @extend %section-heading-cl;
+            @extend %fw-600;           
+        }
+    }
+    .menu_list-wrapper {
+        @extend %list-style-reset;
+        li a {
+            display: inline-block;
+            line-height: var(--gutter-sm);
+            padding: 5px 0;
+            @extend %body-font-size;
+            &:hover {
+                text-decoration: underline;
+            }
+        } 
+    }
+}
+/* End Section Menu List */

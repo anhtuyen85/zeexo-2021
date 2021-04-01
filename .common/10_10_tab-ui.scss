@@ -16,3 +16,75 @@
         }
     }
 }
+
+/* Section Product Tabs - Tab in the product page*/
+.featured_group_tab-pane-inner:hover {
+    @media (min-width: 1025px) {
+        .slide_ui-controls--nav {
+            opacity: 1;
+        }                
+    }
+} 
+.featured_group_tab-ui {        
+    .featured_group_tab-header {
+        display: block;   
+        overflow: hidden;
+        overflow-x: auto;
+        white-space: nowrap;       
+        text-align: center;         
+        margin: 0 calc(-1 * var(--gutter-xs)) var(--gutter-sm); 
+        @media (min-width: 576px) {
+            margin-left: calc(-1 * var(--gutter-xs));
+            margin-right: calc(-1 * var(--gutter-xs));
+        }
+        .featured_group_tab-link {
+            padding: 0 var(--gutter-xs);
+            display: inline-block;
+            margin-bottom: var(--gutter-xxs);
+            @media (min-width: 576px) {
+                padding: 0 var(--gutter-sm);
+            }
+            > a {
+                display: block;
+                line-height: 1.2;                
+                position: relative; 
+                color: var(--body-link);               
+                font-size: calc(var(--heading-size-h6) - 0.1rem);
+                @media (min-width: 576px) {
+                    font-size: calc(var(--heading-size-h6) + 0.4rem);
+                }
+                &:after {
+                    content: '';
+                    width: 0;
+                    height: 2px;
+                    background: var(--body-link);
+                    transition: all 0.35s ease 0s;
+                    @include ab(n, 0, 0, n);
+                }
+                &:hover {
+                    @media (min-width: 1025px) {
+                        &:after {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            &.active {
+                > a:after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .featured_group_tab-content {                
+        > .featured_group_tab-pane {
+            &:not(.active) {                
+                @include ab(0, 0, n, n);
+                @include visibility-hidden;
+                width: 100%;
+            }
+           
+        }
+    }
+}
+/* End Section Product Tabs - Tab in the product page*/

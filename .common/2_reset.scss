@@ -441,12 +441,14 @@ img {
 }
 .product-price {
     color: var(--price-color);
-    display: inline-flex;
-    flex-wrap: wrap;
+    display: inline-flex;    
+    @extend %flex-wrap;
     @extend %align-items-center;
+    @extend %fw-500;
     .price-compare {
         color: var(--price-compare-color);
         text-decoration: line-through;
+        font-weight: var(--body-font-weight);
     }
     .price-sale {
         color: var(--price-sale-color);
@@ -462,15 +464,15 @@ img {
 }
 .label_ui {    
     line-height: 16px;
-    padding: 0 8px;    
+    padding: 0 6px;    
     font-size: 11px;    
     text-align: center;
     text-transform: uppercase;
-    display: block;
-   @extend %radius-default;    
+    display: block;   
     margin: 0;
     @include margin-end(3px);
     @extend %fw-700;
+    border-radius: 3px;
 }
 .label_ui-sale {
     color: var(--sale-lb-cl);
@@ -487,7 +489,7 @@ img {
 .slide_ui-controls--dot,
 .tns-nav {
     text-align: center;
-    margin: var(--gutter-sm) auto 0;            
+    margin: var(--gutter-lg) auto 0;            
     @extend %display-flex;
     @extend %flex-wrap;
     @extend %align-items-center;
@@ -555,6 +557,7 @@ img {
             display: flex;
         }
     }
+    @extend %btn-control-hover;
 }
 .breadcrumb-list {
     @extend %list-style-reset;

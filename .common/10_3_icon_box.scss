@@ -11,11 +11,10 @@
         .card_section-info {
             p {
                 margin: 0 auto;                
-            }
+            }  
             .card_section-title {
-                font-size: var(--heading-size-h5);
-                font-weight: var(--heading-5-weight);                
-            }
+                @extend %fw-500;
+            }          
         }        
     }    
     .next-step-icon {        
@@ -46,27 +45,46 @@
             }
             .card_section-title {                
                 margin-bottom: 20px;
+                font-size: var(--heading-size-h5);                   
             }              
         }    
         .card_section-item {           
             margin-bottom: var(--gutter-xlg);
         }
     }
-    &.style-2 {        
-        padding: 9.5px 0;        
+    &.style-2 {                         
         .card_section-item-inner {
             @extend %display-flex;
             @extend %align-items-center;
+            @extend %justify-content-center;
+            padding: 9.5px 0; 
             .card_section-header {
               min-width: 20px;
               @include margin-end(12.5px);
             }
-            .card_section-body {
-                flex: 1;
+            .card_section-body {                
                 min-width: 0;
+                .card_section-title {
+                    font-size: var(--heading-size-h6);
+                    line-height: 24px;
+                }
                 p:not(.card_section-title) {
                     line-height: 20px;
                 }
+            }
+        }
+        &.layout-boxed {
+            &.border-top-true {
+                border: none;
+                .section_content-wrapper {
+                    border-top: 1px solid var(--body-border-color);
+                }                
+            }
+            &.border-bottom-true {
+                border: none;
+                .section_content-wrapper {
+                    border-bottom: 1px solid var(--body-border-color);
+                }                
             }
         }
     }

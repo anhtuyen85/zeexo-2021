@@ -48,7 +48,7 @@
         display: block;
     }
     .btn {
-        padding: 3px var(--gutter-lg);
+        padding: 4px var(--gutter-lg);
         @extend %body-font-size;
     }    
     &.hover_style-1 {
@@ -67,7 +67,7 @@
     }
     &.border-items {
         .card_section-item {
-            border: 1px solid 1px solid var(--body-border-color);
+            border: 1px solid var(--body-border-color);
             @extend %radius-default;
         }       
     }

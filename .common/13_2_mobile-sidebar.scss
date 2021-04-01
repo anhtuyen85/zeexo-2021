@@ -1,0 +1,27 @@
+/* blog page - product detail page */ 
+.mobile-sidebar-popup {            
+    @include fixed(50%, n, n, 0);
+    @include translateY(-50%);
+    z-index: layer(popup-link-target); 
+    background: var(--main-color);
+    border-radius: var(--border-radius-default) 0 0 var(--border-radius-default);
+    @media (min-width: 992px) {
+        display: none;
+    }
+    a {
+        padding: var(--gutter-sm) var(--gutter-xs);
+        @include padding-start(var(--gutter-sm)); 
+        display: block;
+    }
+    svg path {
+        fill: var(--main-text-color);
+    }            
+} 
+.sidebarProduct {
+    &#sidebarDrawer { 
+        @media (max-width: 991px) {
+            @include sidebarDrawer-right; 
+        }
+    }         
+}    
+/* End  blog page - product detail page */ 

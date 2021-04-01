@@ -16,5 +16,12 @@
                 color: var(--section-heading-cl);
             }
         }
+    } 
+    .view-all-btn {
+        margin: var(--gutter-lg) auto 0;
+        text-align: center;
+        > .btn-1 {            
+            display: inline-block;
+        }      
     }
 }

@@ -1,7 +1,7 @@
 /* Section Product Grid V3 */
 .featured_block-special-item {
     position: relative;
-    overflow: hidden;    
+    overflow: hidden;   
 }
 .home-products-grid-v3 {  
     .featured_block-special-item {
@@ -32,6 +32,34 @@
                 vertical-align: top;
             }
         }
+    }
+    .view-all-btn {
+        text-align: center;
+        margin: var(--gutter-xlg) 0 auto;
+        > a {
+            color: var(--main-color);                    
+            display: inline-block;                    
+            @extend %position-relative;
+            &:after {
+                content: '';
+                height: 1px;
+                width: 100%;
+                background: var(--main-color);
+                transition: all 0.35s ease-in-out 0s;
+                @include ab(n, 0, 0, n);
+            }
+            @media (hover: hover) {            
+                &:hover {
+                    text-decoration: none;
+                    &:after {
+                        width: 0;                    
+                        left: 50%;
+                        right: 50%;
+                    }
+                }
+            }
+        }
+
     }
 }
 /* End Section Product Grid V3 */

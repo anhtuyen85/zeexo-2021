@@ -119,8 +119,7 @@
     width: 100%;
     form {
         @extend %display-flex;
-        @extend %align-items-center;
-        @include margin-start(auto);
+        @extend %align-items-center;        
         max-width: 515px;
         width: 100%;
         background: #f0f0f0;

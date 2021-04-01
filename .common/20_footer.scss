@@ -189,6 +189,7 @@
                 display: block;
                 line-height: 22px;
                 padding: 3px 0;
+                color: var(--footer-copyright-cl);
             }
             &:not(:last-child) {
                 @include margin-end(var(--gutter-lg));
@@ -207,8 +208,7 @@
         @extend %font-size-3;
     }
 }
-.section-footer {    
-    border-top: 1px solid var(--footer-copyright-border-top);
+.section-footer {        
     .section_content-wrapper {
         .row {
             @extend %align-items-center;
@@ -234,6 +234,14 @@
                 justify-content: flex-end;
             }
         }        
+    }
+}
+footer {
+    .card_section-info {
+        color: var(--footer-copyright-cl);
+        p {
+            color: inherit;
+        }
     }
 }
 /* End Footer */

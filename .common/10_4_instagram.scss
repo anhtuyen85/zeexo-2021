@@ -1,0 +1,53 @@
+/* Section Instagram - instagram in the page */
+.home-instafeed {         
+    .section_content-body .tns-inner {
+        .product-section {
+            border: none;  
+        }
+    }
+    .btn--prev,
+    .btn--next {
+        @extend %radius-circle;
+    }
+    .AppContent .tns-outer .btn__wrapper .btn--prev {
+        left: calc(-1 * var(--gutter-xs));
+        @media (min-width: 1335px) {
+            left: -24px; 
+        }
+    } 
+    .AppContent .tns-outer .btn__wrapper .btn--next {
+        right: calc(-1 * var(--gutter-xs));
+        @media (min-width: 1335px) { 
+            right: -24px; 
+        }
+    }
+    .card_section-item-inner {
+        > a {
+            display: block;                      
+            @extend %effect-image;
+            &:hover {
+                @media (min-width: 1025px) {
+                    @include effect-image-hover;
+                }
+            }
+        }
+    }
+    &.mobile_layout-full-right {
+        .AppContent .tns-outer .btn__wrapper .btn--next {
+            @media (max-width: 767px) {
+                right: 0;
+            }
+        }
+    }
+    &.mobile_layout-full {
+        @media (max-width: 767px) {
+            .AppContent .tns-outer .btn__wrapper .btn--next {
+                right: 0;
+            }
+            .AppContent .tns-outer .btn__wrapper .btn--prev {
+                left: 0;
+            }
+        }
+    }
+}
+/* End Section Instagram - instagram in the page */

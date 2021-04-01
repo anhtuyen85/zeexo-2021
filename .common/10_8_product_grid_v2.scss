@@ -1,0 +1,42 @@
+/* Section Product Grid V2 */
+.home-products-grid-v2 {    
+    .featured_product-special-item {
+        .featured_product__item,
+        .empty_card {            
+            border-width: 3px;
+            border-style: solid;
+            border-color: var(--special-border);
+            padding: 16px;
+            @extend %position-relative;
+            @extend %radius-default;
+            @extend %label-product-deal;
+            @media (min-width: 768px) {
+                padding: var(--gutter-md);
+            }
+        }
+    }    
+    .countdown-time {
+        margin: 0 auto var(--gutter-sm);
+        @media (max-width: 1199px) and (min-width: 992px) {
+            zoom: 0.85;
+        }       
+        @media (min-width: 768px) {
+            margin-bottom: var(--gutter-lg);
+            margin-top: -5px;
+        }
+        > span {
+            margin-bottom: 7px;
+            &:not(:last-child) {
+                @include padding-end(var(--gutter-sm));
+                &:after {
+                    right: 4px;
+                }
+            }
+        }
+        .date-value, .date-label {
+            font-size: calc(var(--heading-size-h6) - 0.1rem);
+            padding: 10px 8px;
+        }
+    }  
+}
+/* End Section Product Grid V2 */
