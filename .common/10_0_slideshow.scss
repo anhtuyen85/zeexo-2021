@@ -92,15 +92,15 @@
     .content-text-1 {
         line-height: 1.2;
         margin: 0 0 var(--gutter-xs);
-        font-size: 7rem;
-        @extend %fw-600;
-        @extend %section-heading-cl;
+        font-size: 5.5rem;
+        color: #fff;
+        @extend %fw-600;        
     }
     .content-text-2 {
         line-height: 35px;
         margin: 0 0 var(--gutter-sm);
-        color: var(--body-color);
-        font-size: 2.4rem;
+        color: #fff;
+        font-size: 3.5rem;
     }
     .content-image {
         .image__style {
@@ -138,7 +138,7 @@
         font-size: 7rem;        
     }
     .price-compare {
-        font-size: 3rem;
+        font-size: 3.6rem;
         padding-top: 11px;
     }   
     .content-product_label {
@@ -200,10 +200,14 @@
         margin-bottom: var(--gutter-lg);    
         display: inline-block;
         width: 100%;    
-        max-width: 520px;
+        max-width: 520px;        
         form {
             max-width: 100%;
             background: #fff;
+            min-width: calc(100vw - 30px);
+            @media (min-width: 510px) {
+                min-width: 480px;
+            }
             button {
                 padding: 0 var(--gutter-md);
             }

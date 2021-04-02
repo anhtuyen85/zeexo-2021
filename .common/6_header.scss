@@ -5,10 +5,7 @@
     color: var(--header-text-color-mobile);    
     svg path {
         stroke: var(--header-icons-color-mobile);
-    }
-    .search-ui-btn svg path {
-        fill: var(--header-icons-color-mobile);
-    }
+    }    
     .number {        
         background: var(--header-bg-cart-number-mobile);
         color: var(--header-text-cart-number-mobile);
@@ -41,11 +38,13 @@
 .header-block {
     .layout-full {
         .header-content {
-            padding-left: 3%;
-            padding-right: 3%;
-            @media (min-width: 1320px) {
-                padding-left: 40px;
-                padding-right: 40px;
+            > div {
+                padding-left: 3%;
+                padding-right: 3%;
+                @media (min-width: 1320px) {
+                    padding-left: 40px;
+                    padding-right: 40px;
+                }
             }
         }
     }
@@ -57,11 +56,12 @@
         .header-icons {
             svg path {
                 stroke: var(--header-icons-color-desk);
-            }
-            .search-ui-btn svg path {
-                fill: var(--header-icons-color-desk);
-            }
+            }           
         } 
+        [data-arn-action].show-compare .arn_icon-show-compare,
+        [data-arn-action].show-wishlist .arn_icon-show-wishlist {
+            stroke: var(--header-icons-color-desk);
+        }
         .logo-wrapper { 
             display: flex;
         }    
@@ -205,12 +205,18 @@
         }        
     }   
     .nav-mobile .nav--mobile {
-        border: 1px solid rgba(var(--header-border-color-desk), var(--header-border-color-desk-opacity));
-       @extend %radius-default;
+        @extend %radius-default;
+        border: 1px solid var(--header-text-color-desk);       
         padding: 7px var(--gutter-md);
         color: var(--header-text-color-desk);
         svg path {
             fill: var(--header-text-color-desk);
+        }
+        @media (hover : hover) {
+            &:hover {
+                color: var(--nav-link-hover);
+                border-color: var(--nav-link-hover);
+            }
         }
     }  
     .header-col-3 {
@@ -250,6 +256,10 @@
 .section-header-2 {
     .horizontal-menu {
         @include padding-start(35px); 
+        > .main-menu > li > a {
+            padding-top: 9px;
+            padding-bottom: 9px;
+        }
     }
 }
 .templateIndex {

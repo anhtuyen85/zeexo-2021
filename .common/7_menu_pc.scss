@@ -223,20 +223,7 @@ li.nav-item {
                 @media (min-width: 768px) {
                     margin-bottom: var(--gutter-lg);
                     margin-top: -5px;
-                }
-                > span {
-                    margin-bottom: 7px;
-                    &:not(:last-child) {
-                        @include padding-end(var(--gutter-sm));
-                        &:after {
-                            right: 4px;
-                        }
-                    }
-                }
-                .date-value, .date-label {
-                    font-size: calc(var(--heading-size-h6) - 0.1rem);
-                    padding: 10px 8px;
-                }
+                }              
             }
         }
     }

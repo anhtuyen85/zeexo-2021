@@ -14,42 +14,49 @@
     }  
     .card_section-content {
         padding: var(--gutter-sm);
+        color: #fff;
         @media (min-width: 768px) {
             padding: var(--gutter-xlg);
         }
     } 
     .card_section-text-1 {
-        @extend %fw-600;
-        @extend %section-heading-cl;
-        font-size: 2.5rem;
+        @extend %fw-600;        
+        font-size: 2.3rem;
         line-height: 1.3;
-        margin-bottom: var(--gutter-lg);
+        margin-bottom: var(--gutter-sm);
     }
     .card_section-text-2 {
         display: inline-flex;
         align-items: center;   
+        font-size: 2rem;
         .svg-element-ui {
             display: flex;
             @include margin-end(var(--gutter-ct));
         }                 
     }
-    .card_section-price {
-        font-weight: bold;
-        font-size: 4.5rem;
+    .card_section-price {        
+        font-size: 2.5rem;
         line-height: 1.2;
-        color: var(--price-sale-color);
-        display: block;
+        color: #fff;
+        align-items: flex-end;
+        @extend %fw-600;
+        @extend %display-flex;
+        @extend %flex-wrap;        
+        > span {
+            @include padding-end(5px);
+        }
     }
     .card_section-price-compare {
-        @extend %fw-600;
-        font-size: 2.1rem;
+        font-weight: var(--body-font-weight);
+        font-size: 2.0rem;
         line-height: var(--gutter-lg);
-        color: var(--price-compare-color);
+        color: #fff;
         display: block;
     }
     .btn {
-        padding: 4px var(--gutter-lg);
-        @extend %body-font-size;
+        padding: 5px var(--gutter-lg);
+        @extend %font-size-1;
+        @extend %fw-600;
     }    
     &.hover_style-1 {
         .card_section-figure {
@@ -70,6 +77,34 @@
             border: 1px solid var(--body-border-color);
             @extend %radius-default;
         }       
+    }
+    .show-all-btn {
+        text-align: center;
+        margin: var(--gutter-xlg) 0 auto;
+        > a {
+            color: var(--main-color);                    
+            display: inline-block;                    
+            @extend %position-relative;
+            &:after {
+                content: '';
+                height: 1px;
+                width: 100%;
+                background: var(--main-color);
+                transition: all 0.35s ease-in-out 0s;
+                @include ab(n, 0, 0, n);
+            }
+            @media (hover: hover) {            
+                &:hover {
+                    text-decoration: none;
+                    &:after {
+                        width: 0;                    
+                        left: 50%;
+                        right: 50%;
+                    }
+                }
+            }
+        }
+
     }
 }
 

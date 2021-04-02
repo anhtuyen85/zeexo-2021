@@ -254,6 +254,11 @@
         }            
     }
 }
+.testimonial-wrapper {
+    .slide_ui-controls--nav {
+        display: none;
+    }
+}
 .block-video {
     position: relative;      
     .row {

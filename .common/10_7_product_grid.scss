@@ -1,12 +1,15 @@
 .collection-heading {
     @extend %display-flex;
+    @extend %flex-wrap;
     @extend %align-items-center;    
     margin-bottom: var(--gutter-xs);
+    > h3 {
+        @include margin-end(var(--gutter-sm));
+    }
     > a {
         color: var(--main-color);        
         margin-top: var(--gutter-xxs);
-        display: inline-block;        
-        @include margin-start(var(--gutter-sm));
+        display: inline-block;                
         @extend %position-relative;
         &:after {
             content: '';

@@ -4,6 +4,11 @@
     overflow: hidden;   
 }
 .home-products-grid-v3 {  
+    .featured_product-group {
+        @media (min-width: 768px) {
+            margin-bottom: calc(-1 * var(--gutter-xlg));
+        }
+    }
     .featured_block-special-item {
         @extend %radius-default;
         img {
