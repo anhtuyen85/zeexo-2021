@@ -1,0 +1,35 @@
+/* Section Favorite Brands */
+.home-favorite-brand {    
+    .card_section-item-inner {
+        @extend %position-relative;
+        .card_section-content {
+            @include ab(auto, 20px, 0, 20px);            
+            background: #fff;
+            border-radius: var(--border-radius-default) var(--border-radius-default) 0 0;
+        }
+        .card_section-content-inner {
+            @extend %display-flex;
+            @extend %flex-wrap;
+            @extend %align-items-center;
+            padding: var(gutter-xs);
+            margin: 0 calc(-1 * var(--gutter-xs));
+            @media (min-width: 768px) {
+                padding: var(--gutter-lg);
+                margin: 0 calc(-1 * var(--gutter-sm));
+            }
+            > div {
+                padding: 0 var(--gutter-xs);
+                @media (min-width: 768px) {
+                    padding: 0 var(--gutter-sm);
+                }
+            }
+        }
+    }
+    .card_section-item-links {
+        margin: 0 var(--gutter-sm);
+        padding: var(--gutter-xs) var(--gutter-sm);
+        background: #fff;
+        border-radius: 0 0 var(--border-radius-default) var(--border-radius-default);
+    }
+}
+/* Section Favorite Brands */

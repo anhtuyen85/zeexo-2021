@@ -164,6 +164,18 @@
             }
         }
     }
+    .cart-action {
+        .btn {            
+            @extend %align-items-center;
+            display: inline-flex;
+            .svg-element-ui {
+                @include margin-end(13px);
+                svg path {
+                    stroke: var(--btn1-cl);
+                }
+            }
+        }
+    }
     .content-sale-label {
         width: 66px;
         height: 66px;
