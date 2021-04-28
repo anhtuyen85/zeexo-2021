@@ -6,12 +6,13 @@
             @include ab(auto, 20px, 0, 20px);            
             background: #fff;
             border-radius: var(--border-radius-default) var(--border-radius-default) 0 0;
+            border-bottom: 1px solid var(--body-border-color);
         }
         .card_section-content-inner {
             @extend %display-flex;
             @extend %flex-wrap;
             @extend %align-items-center;
-            padding: var(gutter-xs);
+            padding: var(--gutter-xs);
             margin: 0 calc(-1 * var(--gutter-xs));
             @media (min-width: 768px) {
                 padding: var(--gutter-lg);
@@ -25,11 +26,33 @@
             }
         }
     }
-    .card_section-item-links {
-        margin: 0 var(--gutter-sm);
-        padding: var(--gutter-xs) var(--gutter-sm);
-        background: #fff;
-        border-radius: 0 0 var(--border-radius-default) var(--border-radius-default);
+    .card_section-item-links {       
+        .csil-inner {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin: 0 var(--gutter-sm);
+            padding: var(--gutter-xs) var(--gutter-sm);
+            background: #fff;
+            border-radius: 0 0 var(--border-radius-default) var(--border-radius-default);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+            &:empty {
+                display: none;
+            }
+            a {
+                font-size: calc(var(--body-font-size) - 2px);
+                &:not(:last-child) {
+                    @include margin-end(15px);
+                }
+            }
+            .show-all-link {
+                color: var(--main-color);
+                text-decoration: underline;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
     }
 }
 /* Section Favorite Brands */

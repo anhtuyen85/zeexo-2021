@@ -3,6 +3,9 @@
     padding: var(--gutter-xs) 0;
     background: var(--header-bg-mobile);
     color: var(--header-text-color-mobile);    
+    .header-row {
+        display: block;
+    }
     svg path {
         stroke: var(--header-icons-color-mobile);
     }    
@@ -283,4 +286,76 @@
         } 
     }    
 }
+#mobile-bar {
+    @include fixed(n, 0, 0, n);
+    width: 100%;
+    z-index: layer(mobile-bar);
+    transition: all .3s ease-in-out;
+    box-shadow: 2px 0px 12px 0px rgba(0,0,0,.15);
+    padding-bottom: calc(env(safe-area-inset-bottom) / 3);
+    .section-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;                        
+    }
+    .mobile-bar--block {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        > a {                
+            position: relative; 
+            padding: 0;
+            svg {
+                pointer-events: none; 
+            }              
+        } 
+        .number {                                      
+            @extend %fw-600;
+            @extend %radius-circle;
+            text-align: center;
+            margin-top: calc(-1 * var(--gutter-xs));
+            width: var(--gutter-sm);
+            height: var(--gutter-sm);
+            line-height: var(--gutter-sm);    
+            font-size: 9px;                      
+            background: var(--header-bg-cart-number-mobile);
+            color: var(--header-text-cart-number-mobile);      
+        }
+        a.btn, button {
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        .btn.soldout {
+            cursor: not-allowed;
+        }
+        &.block-w50 {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+        &.block-w75 {
+            flex: 0 0 75%;
+            max-width: 75%;
+        }
+        &.block-w66 {
+            flex: 0 0 66.66667%;
+            max-width: 66.66667%;
+        }
+    }
+    .hamburger-close svg path {
+        fill: var(--main-color);
+    }  
+    .mobile-bar_icon > span {
+        display: flex;
+        align-items: center;
+    } 
+    .mobile-bar_text {
+        &:empty {
+            display: none !important; 
+        }
+    }
+} 
 /* End Header */
