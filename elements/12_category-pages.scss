@@ -195,7 +195,7 @@
             @extend %display-flex;
             @extend %align-items-center;  
             line-height: 20px;            
-            padding: var(--gutter-xxs) 0;
+            padding: var(--gutter-xxs) 0;            
             &.active {
                 svg path {
                     fill: var(--main-color);
@@ -203,7 +203,7 @@
             }
         }
         svg path {
-            fill: var(--body-color);
+            fill: #b2b2b2;
         }        
         &:not(:last-child) {
             @include margin-end(var(--gutter-sm));

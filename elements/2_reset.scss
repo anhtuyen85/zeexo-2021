@@ -618,7 +618,7 @@ img {
         }
         &.active {
             a {
-                @extend %section-heading-cl;
+                color: var(--breadcrumb-color);
             }
         }
     }
